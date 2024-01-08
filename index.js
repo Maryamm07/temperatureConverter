@@ -11,6 +11,11 @@ function cToFandK(){
     const kTemp = cTemp + 273.15;
     fahrenheit.value = roundNum(fTemp);
     kelvin.value = roundNum(kTemp);
+    if (cTemp > 30) {
+        alert("🥵 It's hot!");
+    } else {
+        alert("🥶 It's cold!");
+    }
 }
 function fToCandK(){
     const fTemp = parseFloat(fahrenheit.value);
@@ -27,9 +32,9 @@ function kToCandF(){
     fahrenheit.value = roundNum(fTemp); 
 }
 function main(){
-    celcius.addEventListener('input', cToFandK);
-    fahrenheit.addEventListener('input', fToCandK);
-    kelvin.addEventListener('input', kToCandF);
+    celcius.addEventListener('change', cToFandK);
+    fahrenheit.addEventListener('change', fToCandK);
+    kelvin.addEventListener('change', kToCandF);
 }
 
 main();
